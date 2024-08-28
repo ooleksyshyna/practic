@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  My Blog
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "post.css" %}">
+  <link rel="stylesheet" href="{% static "index.css" %}">
+{% endblock %}
+
+{% block content %}
+  <section id="welcome">
+    <header>
+      <img src="{% static "images/завантаження.jpeg"%}" alt="ooleksyshyna - Is telling her story about Erasmus+ experience" />
+      <h2>ERASMUS+ advantages</h2>
+    </header>
+    <p>Erasmus+ is a European Union (EU) program that supports education, training,
+      youth, and sport in Europe. Launched in 2014, it builds on previous
+      EU programs like Erasmus, which focused primarily on student exchange.
+      Erasmus+ has a broader scope, offering opportunities for individuals
+      and organizations in participating countries to engage in activities
+      that enhance skills, employability, and intercultural understanding.</p>
+
+  </section>
+
+  <section id="latest-posts">
+    <h2>My own experience</h2>
+    <ul>
+      {% for post in posts %}
+        {% include "includes/post.html" %}
+      {% endfor %}
+    </ul>
+    
+  </section>
+  <section id="about">
+    <h2>What is it?</h2>
+    <p>Erasmus+ allows students in higher education to study or undertake
+      internships abroad. This includes both intra-European exchanges and
+      opportunities with partner countries outside Europe.
+    </p>
+    <p>
+      The program supports youth exchanges, allowing young people
+      to spend time in another country to learn and engage in cultural
+      activities. It also supports the European Voluntary Service (EVS),
+      where young people can volunteer abroad.
+    </p>
+  </section>
+{% endblock %}
